@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: backend
+  namespace: devops-shop
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: backend
+
+  template:
+    metadata:
+      labels:
+        app: backend
+
+    spec:
+      containers:
+        - name: backend
+          image: busybox:1.36.1
+
+          command:
+            - /bin/sh
+            - -c
+
+          args:
+            - |
+              mkdir -p /www
+              echo "Hello from DevOps Shop Backend" > /www/index.html
+              httpd -f -p 8080 -h /www
+
+          ports:
+            - containerPort: 8080

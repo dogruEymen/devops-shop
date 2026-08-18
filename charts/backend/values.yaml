@@ -1,0 +1,14 @@
+replicaCount: 1
+
+image:
+  repository: busybox
+  tag: 1.36.1
+  pullPolicy: IfNotPresent
+
+containerPort: 8080
+
+service:
+  type: ClusterIP
+  port: 80
+
+responseMessage: "Hello from DevOps Shop Backend"
