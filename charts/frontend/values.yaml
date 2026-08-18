@@ -1,0 +1,19 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: 1.27-alpine
+  pullPolicy: IfNotPresent
+
+containerPort: 8080
+
+service:
+  port: 80
+  type: ClusterIP
+
+responseMessage: "DevOps Shop Frontend"
+
+backend:
+  host: backend
+  port: 80
+

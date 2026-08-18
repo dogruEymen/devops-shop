@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: frontend-nginx-config
+  namespace: {{ .Release.Namespace }}
+
+data:
+  nginx.conf: |
+    events {}
+
+    http {
+      server {
+        listen {{ .Values.containerPort }};
+        
+        location / {
+          default_type text/plain;
+          return 200 {{ printf "%s\n" .Values.responseMessage | quote }};
+          }
+          
+          location /api/ {
+            proxy_pass http://{{ .Values.backend.host }}:{{ .Values.backend.port }}/;
+          }
+        }
+      }
