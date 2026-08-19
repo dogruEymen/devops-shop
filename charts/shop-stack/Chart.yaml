@@ -1,0 +1,15 @@
+apiVersion: v2
+name: shop-stack
+description: DevOps Shop umbrella Helm Chart
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+
+dependencies:
+  - name: backend
+    repository: "file://../backend"
+    version: "0.1.0"
+  
+  - name: frontend
+    repository: "file://../frontend"
+    version: 0.1.0

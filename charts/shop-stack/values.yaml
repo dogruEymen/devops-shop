@@ -1,0 +1,11 @@
+backend:
+  replicaCount: 3
+  responseMessage: "Hello from DevOps Shop Backend - Umbrella"
+
+frontend:
+  replicaCount: 4
+  responseMessage: "DevOps Shop Frontend - Umbrella"
+
+  backend:
+    host: backend
+    port: 80
