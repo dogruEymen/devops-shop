@@ -1,0 +1,16 @@
+backend:
+  replicaCount: 1
+  responseMessage: "Hello from DevOps Shop Backend - DEV"
+
+frontend:
+  replicaCount: 1
+  responseMessage: "DevOps Shop Frontend - DEV"
+
+redis:
+  enabled: true
+
+  haMode:
+    enabled: true
+
+  metrics:
+    enabled: false

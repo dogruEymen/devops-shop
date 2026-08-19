@@ -1,0 +1,16 @@
+backend:
+  replicaCount: 2
+  responseMessage: "Hello from DevOps Backend - STAGING"
+
+frontend:
+  replicaCount: 2
+  responseMessage: "DevOps Shop Frontend - STAGING"
+
+redis:
+  enabled: false
+
+  haMode:
+    enabled: false
+  
+  metrics:
+    enabled: false
