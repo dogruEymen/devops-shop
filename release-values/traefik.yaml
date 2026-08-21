@@ -1,0 +1,7 @@
+service:
+  spec:
+    type: ClusterIP
+
+providers:
+  kubernetesIngress:
+    enabled: true
